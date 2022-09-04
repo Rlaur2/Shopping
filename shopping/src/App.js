@@ -1,11 +1,13 @@
 import './App.css';
-import backgroundImage from '/home/pavel/Projects/Shopping/shopping/src/images/01-nyc-2019-warm-8.webp'
+import chevron from './images/chevron-right.svg'
 
 function App() {
   return (
     <div className='background'>
       <div className='intro'>
-        Hello there.
+        <div className='store-title'>Online Retailer</div>
+        <div className="blurb">Apparel, jewlery, and the latest electronics</div>
+        <div className="shop-button">Shop Now <img className='shop-button-arrow' alt='directional-indicator' src={chevron}></img></div>
       </div>
     </div>
   );
