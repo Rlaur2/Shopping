@@ -1,0 +1,27 @@
+header {
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    width: calc(100vw - 15px);
+    background-color: rgb(27, 104, 57);
+}
+
+.store-logo {
+    font-family: 'always__foreverregular';
+    font-size: 4rem;
+    margin-left: 3rem;
+    margin-top: .5rem;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header > ul {
+    list-style: none;
+    display: flex;
+    gap: 5rem;
+    margin-right: 7rem;
+    color: white;
+    font-size: 2rem;
+}
