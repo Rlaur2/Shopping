@@ -1,10 +1,10 @@
 import React from 'react'
-import { Header } from './components/Header'
+import { ProductDisplay } from './components/ProductDisplay'
 
 export const ShopPage = () => {
   return (
     <div>
-      <Header />
+      <ProductDisplay />
     </div>
   )
 }

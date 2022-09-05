@@ -1,0 +1,12 @@
+.product {
+    border: 2px solid pink;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    width: 25%;
+}
+
+.product img {
+    transform: scale(.3);
+}
