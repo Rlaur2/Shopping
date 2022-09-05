@@ -8,16 +8,16 @@
 
 .background {
     background-image: url('./images/blurred-blackground.webp');
-    height: 100vh;
-    width: calc(100vw - 15px);
+    height: calc(100vh - 83px);
+    width: 100vw;
     background-size:cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
 }
 
 .intro {
-    height: 100vh;
-    width: calc(100vw - 15px);
+    height: calc(100vh - 83px);;
+    width: 100vw;
     background-color: rgba(0,0,0,.65);
     display: flex;
     flex-flow: column;
@@ -39,14 +39,14 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgb(27, 104, 57);
+    background-color: var(--store-color);
+    border: 1px solid var(--store-color);
     font-size: 2rem;
     padding: 1rem .5rem 1rem 1rem;
     border-radius: 15px;
     margin-top: 3rem;
     color: white;
     transition: transform 50ms ease-in-out;
-
 }
 
 .shop-button-arrow {
@@ -70,5 +70,6 @@
     cursor: pointer;
     border: 1px white solid;
     transform: scale(1.2);
+    position: sticky;
 }
 
