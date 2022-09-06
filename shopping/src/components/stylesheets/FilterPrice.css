@@ -1,0 +1,4 @@
+.price-filter {
+    display: flex;
+    flex-flow: column;
+}
