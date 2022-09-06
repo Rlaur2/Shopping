@@ -12,3 +12,7 @@
     padding: .2rem;
     margin-left: .3rem;
 }
+
+#sort:hover {
+    cursor: pointer;
+}
