@@ -4,12 +4,12 @@ import './stylesheets/SearchBar.css'
 
 export const SearchBar = () => {
   return (
-    <form className='search-bar' >
+    <div className='search-bar' >
         <input 
             placeholder='Search...'
             id='search'
             type={"text"} 
         />
-    </form>
+    </div>
   )
 }
