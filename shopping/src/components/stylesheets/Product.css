@@ -1,12 +1,39 @@
 .product {
-    border: 2px solid pink;
-    display: flex;
-    flex-flow: column;
-    justify-content: center;
-    align-items: center;
-    width: 25%;
+   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+   width: 300px;
+   height: 420px;
+   margin: 2rem 1rem;
+   padding: 1rem;
+   cursor: pointer;
+   text-align: center;
+   transition: transform .15s ease-in-out;
+}
+
+.product:hover {
+    cursor: pointer;
+    transform: scale(1.1);
 }
 
 .product img {
-    transform: scale(.3);
+    object-fit: contain;
+    aspect-ratio: 1/1;
+    max-width: 100%;
+}
+
+.product-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+    gap: 10px;
+}
+
+.title {
+   
+}
+
+.price {
+   font-size: 1.4rem;
+   font-weight: 900;
+   
 }
