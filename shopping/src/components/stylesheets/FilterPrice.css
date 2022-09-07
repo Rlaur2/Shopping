@@ -1,4 +1,9 @@
 .price-filter {
     display: flex;
     flex-flow: column;
+    margin-bottom: 1.5rem;
+}
+
+.price-filter input, .price-filter label {
+    cursor: pointer;
 }

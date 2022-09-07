@@ -1,4 +1,15 @@
 .category-filter {
     display: flex;
     flex-flow: column;
+    margin-bottom: 1.5rem;
+}
+
+.category-filter input, .category-filter label {
+    cursor: pointer;
+}
+
+.filter-select {
+    display: flex;
+    align-items: center;
+    margin-bottom: .2rem;
 }

@@ -1,0 +1,14 @@
+.stars {
+    margin-bottom: 1.5rem;
+}
+
+.stars svg {
+    height: 30px;
+    width: 30px;
+    fill: rgb(202, 155, 36);
+}
+
+.stars label, .stars input {
+    cursor: pointer;
+}
+

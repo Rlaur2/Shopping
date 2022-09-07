@@ -14,7 +14,7 @@ export const ProductDisplay = () => {
   
   
     return (
-    <div>
+    <div className='all-products'>
         <ul className='products'>
         {products.map(item => (
             <li key={item.id}>
