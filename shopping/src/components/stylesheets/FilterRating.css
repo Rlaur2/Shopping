@@ -5,7 +5,7 @@
 .stars svg {
     height: 30px;
     width: 30px;
-    fill: rgb(202, 155, 36);
+    fill: var(--star-fill);
 }
 
 .stars label, .stars input {

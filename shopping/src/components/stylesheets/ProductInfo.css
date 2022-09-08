@@ -1,0 +1,17 @@
+.go-back {
+    font-size: 1.7rem;
+    width: fit-content;
+    padding: 1rem;
+    color: white;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2rem;
+    border: 3px solid var(--store-color);
+    background-color: var(--store-color);
+}
+
+.go-back:hover {
+    cursor: pointer;
+    background-color: white;
+    color: var(--store-color);
+}
