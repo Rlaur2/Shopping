@@ -15,3 +15,108 @@
     background-color: white;
     color: var(--store-color);
 }
+
+.product-info {
+    display: flex;
+    margin-top: 1rem;
+    justify-content: center;
+    align-items: center;
+    gap: 6rem;
+}
+
+.product-details {
+    width: 50%;
+}
+
+.product-info > img {
+    object-fit: contain;
+    aspect-ratio: 1/1;
+    width: 500px;
+    margin-top: 3rem;
+}
+
+.product-info-title {
+    font-size: 2rem;
+    margin-bottom: .5rem;
+    font-weight: 700;
+    width: 70%;
+}
+
+.product-info-category {
+    margin-bottom: .5rem;
+}
+
+.product-info-rating {
+    display: flex;
+    align-items: center;
+}
+
+.review-stars {
+    padding: .5rem;
+    transform: scale(1.2);
+    display: flex;
+    align-items: center;
+}
+
+.review-count {
+    margin-left: 1rem;
+    padding-bottom: 2rem;
+    font-size: 1.2rem;
+}
+
+.product-price {
+    font-weight: 700;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+.cart-increaser {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.cart-amount {
+    font-size: 2rem;
+}
+
+.add-to-cart {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    gap: .5rem;
+}
+
+.add-to-cart-button {
+    font-size: 1.6rem;
+    width: fit-content;
+    padding: .7rem;
+    color: white;
+    border: 3px solid var(--store-color);
+    background-color: var(--store-color);
+}
+
+.add-to-cart-button:hover {
+    cursor: pointer;
+    background-color: white;
+    color: var(--store-color);
+}
+
+.add-to-cart svg {
+    height: 50px;
+    width: 50px;
+    fill: var(--store-color);
+}
+
+.add-to-cart svg:hover {
+    transform: scale(1.2);
+    cursor: pointer;
+}
+
+.product-info-description {
+    width: 70%;
+    margin: 2rem auto;
+    font-size: 1.5rem;
+    border: double 4px var(--store-color);
+    padding: 1rem;
+}

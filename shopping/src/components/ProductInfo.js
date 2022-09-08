@@ -22,31 +22,33 @@ export const ProductInfo = ({match}) => {
         <div className="go-back">
             Back To Products
         </div>
-        <div className="product-info">
-            <img src={product.image} alt={product.title} />
-            <div className="product-details">
-                <div className="product-info-title">
-                    {product.title}
-                </div>
-                <div className="product-info-category">
-                    Category: {product.category}
-                </div>
-                <div className="product-info-rating">
-                    <StarRatings rating={product.rating.rate} />
-                    <div>{product.rating.count} reviews</div>
-                </div>
-                <div className="product-price">
-                    ${product.price}
-                </div>
-                <div className="add-to-cart">
-                    <Minus />{cartAmount}<Plus />
-                    <div className="add-to-cart-button">
-                        Add To Cart
+        <div className='product-container'>
+            <div className="product-info">
+                <img src={product.image} alt={product.title} />
+                <div className="product-details">
+                    <div className="product-info-title">
+                        {product.title}
+                    </div>
+                    <div className="product-info-category">
+                        Category: {product.category}
+                    </div>
+                    <div className="product-info-rating">
+                        <div className="review-stars"><StarRatings rating={product.rating.rate} /></div>
+                        <div className='review-count'>{product.rating.count} reviews</div>
+                    </div>
+                    <div className="product-price">
+                        ${product.price}
+                    </div>
+                    <div className="add-to-cart">
+                        <div className='cart-increaser'><Minus /><div className='cart-amount'>{cartAmount}</div><Plus /></div>
+                        <div className="add-to-cart-button">
+                            Add To Cart
+                        </div>
                     </div>
                 </div>
-                <div className="product-info-description">
-                    Description: {product.description}
-                </div>
+            </div>
+            <div className="product-info-description">
+                    {product.description}
             </div>
         </div>
     </div>
