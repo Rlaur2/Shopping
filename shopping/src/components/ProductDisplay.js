@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Product } from './Product';
 import './stylesheets/ProductDisplay.css'
+import { Link } from 'react-router-dom';
 
 export const ProductDisplay = () => {
   const [products, setProducts] = useState([
@@ -18,14 +19,16 @@ export const ProductDisplay = () => {
         <ul className='products'>
         {products.map(item => (
             <li key={item.id}>
-              <Product 
-                category={item.category}
-                description={item.description}
-                image={item.image}
-                price={item.price}
-                rating={item.rating}
-                title={item.title}
-              />   
+              <Link to={`/shop/${item.id}`}>
+                <Product 
+                  category={item.category}
+                  description={item.description}
+                  image={item.image}
+                  price={item.price}
+                  rating={item.rating}
+                  title={item.title}
+                />
+              </Link>   
             </li>
         ))}
         </ul>
