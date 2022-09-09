@@ -15,8 +15,11 @@ export const ProductInfo = ({match}) => {
   const params = useParams();
 
   useEffect(() => {
-    
-  })
+    /*const locations = !localStorage.newLocation ? [] : JSON.parse(localStorage.getItem('newLocation'))
+    localStorage.setItem('newLocation', JSON.stringify([...locations,`I've been to the ${product.title} page!`]))
+    console.log(locations);
+    the above code works, you can save an array in local storage and pull it from anywhere on the site */
+  },[])
 
     return (
     <div>

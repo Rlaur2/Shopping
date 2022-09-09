@@ -5,9 +5,10 @@ import {ReactComponent as ShopIcon} from '/home/pavel/Projects/Shopping/shopping
 import {ReactComponent as CartIcon} from '/home/pavel/Projects/Shopping/shopping/src/images/cart-outline.svg'
 import { Link, useParams } from 'react-router-dom'
 import { SearchBar } from './SearchBar'
+import { Cart } from './Cart'
 
 export const Header = ({search}) => {
-  const params = useParams();
+  const [cart, setCart] = useState('');
 
   useEffect(() => {
    
@@ -22,9 +23,7 @@ export const Header = ({search}) => {
             <Link to={"/shop"}><li className='shop'>Shop <div className='shop-icon'><ShopIcon /></div></li></Link>
             <li className='cart-button'>Cart <div className='cart-icon'><CartIcon /></div></li>
         </ul>
-          <div className="cart">
-
-          </div>
+            <Cart cart={cart} />
     </header>
   )
 }
