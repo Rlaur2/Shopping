@@ -107,3 +107,24 @@
     justify-content: center;
     align-items: center;
 }
+
+body {
+    /*overflow: hidden;*/
+}
+
+.checkout {
+    padding: 2rem;
+    background-color: white;
+    color: var(--store-color);
+    margin: 2rem auto;
+    font-weight: 900;
+    font-size: 1.5rem;
+    border-radius: 10px;
+    width: fit-content;
+    cursor: pointer;
+}
+
+.checkout:hover {
+    transform: scale(1.1);
+}
+

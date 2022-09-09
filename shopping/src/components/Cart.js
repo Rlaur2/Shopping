@@ -11,6 +11,9 @@ export const Cart = ({cart}) => {
                 {cart.map(item => (
                     <CartItem cartItem={item} />
                 ))}
+                <div className="checkout">
+                    Proceed To Checkout ({cart.length} {cart.length === 1 ? 'item' : 'items'})
+                </div>
         </div>
     </div>
   )
