@@ -43,6 +43,7 @@ header > ul {
     margin-right: 7rem;
     color: white;
     font-size: 2rem;
+    margin-left: auto;
 }
 
  .home {
@@ -52,7 +53,7 @@ header > ul {
     fill: white;
  }
 
- .shop, .cart {
+ .shop, .cart-button {
     display: flex;
     justify-content: center;
     align-items:baseline;
