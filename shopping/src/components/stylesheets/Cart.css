@@ -22,7 +22,11 @@
 }
 
 .transparent-background, .cart {
-    display: none;
+    /*display: none;*/
+}
+
+body {
+    /*overflow: hidden;*/
 }
 
 .cart-name {
@@ -108,9 +112,7 @@
     align-items: center;
 }
 
-body {
-    /*overflow: hidden;*/
-}
+
 
 .checkout {
     padding: 2rem;

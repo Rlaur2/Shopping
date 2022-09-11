@@ -9,8 +9,9 @@ import { Header } from './Header'
 
 
 export const ProductInfo = ({match}) => {
-  const [product, setProduct] = useState({category: 'women\'s clothing', description:'Note:The Jackets is US standard size, Please choose size as your usual wear Material: 100% Polyester; Detachable Liner Fabric: Warm Fleece. Detachable Functional Liner: Skin Friendly, Lightweigt and Warm.Stand Collar Liner jacket, keep you warm in cold weather. Zippered Pockets: 2 Zippered Hand Pockets, 2 Zippered Pockets on Chest (enough to keep cards or keys)and 1 Hidden Pocket Inside.Zippered Hand Pockets and Hidden Pocket keep your things secure. Humanized Design: Adjustable and Detachable Hood and Adjustable cuff to prevent the wind and water,for a comfortable fit. 3 in 1 Detachable Design provide more convenience, you can separate the coat and inner as needed, or wear it together. It is suitable for different season and help you adapt to different climates',id:15,image:'https://fakestoreapi.com/img/51Y5NI-I5jL._AC_UX679_.jpg',price:56.99,rating:{rate:2.6,count:235},title:'BIYLACLESEN Women\'s 3-in-1 Snowboard Jacket Winter Coats'})
+  const [product, setProduct] = useState({category: 'men\'s clothing', description: 'Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday', id: 0, image: 'https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg', price: 109.95, rating: {rate:3.9,count:120},title:'Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops'})
   const [cartAmount, setCartAmount] = useState(1);
+  const [change, setChange] = useState(false);
   //params.id gives me the url to will be used to fetch this specific item
   const params = useParams();
 
@@ -46,6 +47,7 @@ export const ProductInfo = ({match}) => {
         localStorage.setItem('cart', JSON.stringify(currentCart));
         console.log(currentCart, 'first time going to cart');
     }
+    setChange(true);
   }
 
   const handleCartIncrease = () => {
@@ -69,7 +71,10 @@ export const ProductInfo = ({match}) => {
 
     return (
     <div>
-        <Header />
+        <Header 
+            change={change}
+            setChange={setChange} 
+            />
         <Link to={'/shop'}> 
             <div className="go-back">
                 Back To Products
