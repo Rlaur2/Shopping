@@ -17,9 +17,55 @@ export const ProductInfo = ({match}) => {
   useEffect(() => {
     /*const locations = !localStorage.newLocation ? [] : JSON.parse(localStorage.getItem('newLocation'))
     localStorage.setItem('newLocation', JSON.stringify([...locations,`I've been to the ${product.title} page!`]))
-    console.log(locations);
     the above code works, you can save an array in local storage and pull it from anywhere on the site */
+    const currentCart = JSON.parse(localStorage.getItem('cart'));
+    if (!currentCart) {
+        localStorage.setItem('cart', JSON.stringify([]));
+    }
   },[])
+
+  const handleCartAddition = () => {
+    const currentCart = JSON.parse(localStorage.getItem('cart'));
+    const checkCart = currentCart.filter(item => {
+        if (item.id === product.id) {
+            return item;
+        }
+        });
+        console.log(currentCart, checkCart);
+    if (checkCart.length) {
+        const newStorage = currentCart.map(item => {
+            if (item.id === product.id) {
+                item.quantity += cartAmount;
+                return item;
+            } else return item;
+        });
+        localStorage.setItem('cart', JSON.stringify(newStorage));
+        console.log(newStorage, 'already in cart');
+    } else {
+        currentCart.push({...product, quantity: cartAmount});
+        localStorage.setItem('cart', JSON.stringify(currentCart));
+        console.log(currentCart, 'first time going to cart');
+    }
+  }
+
+  const handleCartIncrease = () => {
+    if (cartAmount === 99) {
+        return;
+    }
+    let newCount = cartAmount;
+    newCount += 1;
+    setCartAmount(newCount);
+  }
+
+  const handleCartDecrease = () => {
+    if (cartAmount === 1) {
+        return;
+    }
+    let newCount = cartAmount;
+    newCount -= 1;
+    setCartAmount(newCount);
+  }
+
 
     return (
     <div>
@@ -47,8 +93,8 @@ export const ProductInfo = ({match}) => {
                         ${product.price}
                     </div>
                     <div className="add-to-cart">
-                        <div className='cart-increaser'><Minus /><div className='cart-amount'>{cartAmount}</div><Plus /></div>
-                        <div className="add-to-cart-button">
+                        <div className='cart-increaser'><Minus onClick={handleCartDecrease} /><div className='cart-amount'>{cartAmount}</div><Plus onClick={handleCartIncrease} /></div>
+                        <div onClick={handleCartAddition} className="add-to-cart-button">
                             Add To Cart
                         </div>
                     </div>

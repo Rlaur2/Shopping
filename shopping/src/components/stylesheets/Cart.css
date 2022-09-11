@@ -22,7 +22,7 @@
 }
 
 .transparent-background, .cart {
-    /*display: none;*/
+    display: none;
 }
 
 .cart-name {
