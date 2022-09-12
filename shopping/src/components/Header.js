@@ -9,9 +9,24 @@ import { Cart } from './Cart'
 
 export const Header = ({search, change, setChange}) => {
   const [cart, setCart] = useState(!localStorage.cart ? [] : JSON.parse(localStorage.getItem('cart')));
+  const [display, setDisplay] = useState('no-display');
+
   useEffect(() => {
    setCart(JSON.parse(localStorage.getItem('cart')));
   },[change])
+
+  let totalQuantity = 0;
+  if (cart && cart.length > 1) {
+    totalQuantity = cart.reduce((previous, current) => {
+     return previous.quantity + current.quantity;
+    });
+  } else if (cart && cart.length === 1) {
+    totalQuantity = cart[0].quantity;
+  }
+
+  const handleCartDisplay = () => {
+    setDisplay('');
+  }
   
   return (
     <header>
@@ -20,13 +35,23 @@ export const Header = ({search, change, setChange}) => {
         <ul>
             <Link to={"/"}><li className='home'>Home <div className='home-icon'><HomeIcon /></div></li></Link>
             <Link to={"/shop"}><li className='shop'>Shop <div className='shop-icon'><ShopIcon /></div></li></Link>
-            <li className='cart-button'>Cart <div className='cart-icon'><CartIcon /></div></li>
+            <li className='cart-button' onClick={handleCartDisplay}>
+              Cart 
+              <div className='cart-icon'>
+                <CartIcon />
+                {totalQuantity ? <div className='quantity-icon'>{totalQuantity}</div> : null}
+              </div>
+            </li>
         </ul>
-            <Cart 
-              cart={cart}
-              change={change}
-              setChange={setChange}
-              />
+            <div className={display}>
+              <Cart
+                cart={cart}
+                change={change}
+                setChange={setChange}
+                setDisplay={setDisplay}
+                totalQuantity={totalQuantity}
+                />
+            </div>
     </header>
   )
 }

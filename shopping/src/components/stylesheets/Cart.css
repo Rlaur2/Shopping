@@ -21,8 +21,25 @@
     overflow-y: scroll;
 }
 
+.close-button {
+    height: 55px;
+    width: 55px;
+    margin: 1rem;
+    fill: white;
+    position: absolute;
+    cursor: pointer;
+}
+
+.close-button:hover {
+    transform: scale(1.1);
+}
+
 .transparent-background, .cart {
     /*display: none;*/
+}
+
+.no-display {
+    display: none;
 }
 
 body {
@@ -112,8 +129,6 @@ body {
     align-items: center;
 }
 
-
-
 .checkout {
     padding: 2rem;
     background-color: white;
@@ -130,3 +145,11 @@ body {
     transform: scale(1.1);
 }
 
+.empty-cart-message {
+    font-size: 3rem;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 4rem;
+}

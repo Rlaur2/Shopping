@@ -47,7 +47,7 @@ export const ProductInfo = ({match}) => {
         localStorage.setItem('cart', JSON.stringify(currentCart));
         console.log(currentCart, 'first time going to cart');
     }
-    setChange(true);
+    setChange(!change);
   }
 
   const handleCartIncrease = () => {
