@@ -42,6 +42,10 @@
     display: none;
 }
 
+.overflow-hidden {
+    overflow: hidden;
+}
+
 body {
     /*overflow: hidden;*/
 }

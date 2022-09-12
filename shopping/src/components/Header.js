@@ -26,6 +26,8 @@ export const Header = ({search, change, setChange}) => {
 
   const handleCartDisplay = () => {
     setDisplay('');
+    const body = document.querySelector('body');
+    body.classList.toggle('overflow-hidden');
   }
   
   return (

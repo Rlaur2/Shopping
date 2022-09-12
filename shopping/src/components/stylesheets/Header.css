@@ -2,7 +2,7 @@ header {
     display: flex;
     justify-content:space-between;
     align-items: center;
-    width: calc(100vw - 15px);
+    width: 100%;
     background-color: var(--store-color);
     position:sticky;
     top: 0;
@@ -95,6 +95,7 @@ header > ul {
     padding: .3rem;
     border-radius: 100%;
     background-color: maroon;
+    color: white;
     display: flex;
     justify-content: center;
     align-items: center;
