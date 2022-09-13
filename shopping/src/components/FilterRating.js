@@ -14,7 +14,7 @@ export const FilterRating = ({starFilter, setStarFilter, change, setChange}) => 
     };
 
     return (
-    <div className='stars'>
+    <form className='stars'>
             <div className="filter-title">Customer Ratings</div>
             <div className='five-star filter-select'>
                 <input
@@ -102,6 +102,6 @@ export const FilterRating = ({starFilter, setStarFilter, change, setChange}) => 
                 </label>
             </div>
 
-    </div>
+    </form>
   )
 }
