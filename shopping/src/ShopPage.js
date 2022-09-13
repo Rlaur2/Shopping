@@ -19,6 +19,7 @@ export const ShopPage = () => {
   const [category, setCategory] = useState('all');
   const [priceFilter, setPriceFilter] = useState({'0-99.99': false, '100-199.99': false, '200-299.99':false, '300-399.99':false, '400-499.99': false, '500+': false});
   const [starFilter, setStarFilter] = useState({five: false, four: false, three: false, two: false, one: false});
+  const [sort, setSort] = useState('price-low');
 
 
   
@@ -29,7 +30,9 @@ export const ShopPage = () => {
         change={change}
         setChange={setChange}
         />
-      <Sort />
+      <Sort 
+        setSort={setSort}
+      />
       <div className='main'>
         <FilterSideBar 
           category={category}
@@ -115,6 +118,32 @@ export const ShopPage = () => {
                 if(item.rating.rate < 1.5) {
                   return item;
                 }
+              }
+            }).sort((a,b) => {
+              if(sort === 'price-low') {
+                return a.price - b.price;
+              } else if (sort === 'price-high') {
+                return b.price - a.price;
+              } else if (sort === 'name-a') {
+                const titleA = a.title.toUpperCase();
+                const titleB = b.title.toUpperCase();
+                if (titleA > titleB) {
+                  return 1;
+                }
+                if (titleA < titleB) {
+                  return -1;
+                }
+                return 0;
+              } else {
+                const titleA = a.title.toUpperCase();
+                const titleB = b.title.toUpperCase();
+                if (titleA > titleB) {
+                  return -1;
+                }
+                if (titleA < titleB) {
+                  return 1;
+                }
+                return 0;
               }
             })
           }
