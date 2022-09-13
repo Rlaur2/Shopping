@@ -5,12 +5,19 @@ import { FilterRating } from './FilterRating'
 import './stylesheets/FilterSideBar.css'
 
 
-export const FilterSideBar = () => {
+export const FilterSideBar = ({category, setCategory}) => {
   return (
     <div className='sidebar'>
-        <FilterCategory />
-        <FilterPrice />
-        <FilterRating />
+        <FilterCategory 
+        category={category}
+        setCategory={setCategory}
+        />
+        <FilterPrice 
+        
+        />
+        <FilterRating 
+         
+        />
         <div className='filter-reset'>
           Reset Filters
         </div>

@@ -4,7 +4,8 @@ import {ReactComponent as FullStar} from '/home/pavel/Projects/Shopping/shopping
 import './stylesheets/FilterRating.css'
 
 export const FilterRating = () => {
-  return (
+  
+    return (
     <div className='stars'>
             <div className="filter-title">Customer Ratings</div>
             <div className='five-star filter-select'>

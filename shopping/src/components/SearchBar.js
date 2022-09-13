@@ -8,7 +8,7 @@ export const SearchBar = () => {
         <input 
             placeholder='Search...'
             id='search'
-            type={"text"} 
+            type='text' 
         />
     </div>
   )
