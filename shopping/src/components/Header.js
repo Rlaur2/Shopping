@@ -7,7 +7,7 @@ import { Link, useParams } from 'react-router-dom'
 import { SearchBar } from './SearchBar'
 import { Cart } from './Cart'
 
-export const Header = ({search, change, setChange}) => {
+export const Header = ({search, change, setChange, searchItem, setSearchItem}) => {
   const [cart, setCart] = useState(!localStorage.cart ? [] : JSON.parse(localStorage.getItem('cart')));
   const [display, setDisplay] = useState('no-display');
 
@@ -33,7 +33,7 @@ export const Header = ({search, change, setChange}) => {
   return (
     <header>
         <Link to={"/"}><div className="store-logo">Online Retailer</div></Link>
-        {search ? <SearchBar /> : null}
+        {search ? <SearchBar searchItem={searchItem} setSearchItem={setSearchItem} /> : null}
         <ul>
             <Link to={"/"}><li className='home'>Home <div className='home-icon'><HomeIcon /></div></li></Link>
             <Link to={"/shop"}><li className='shop'>Shop <div className='shop-icon'><ShopIcon /></div></li></Link>

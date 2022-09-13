@@ -20,6 +20,7 @@ export const ShopPage = () => {
   const [priceFilter, setPriceFilter] = useState({'0-99.99': false, '100-199.99': false, '200-299.99':false, '300-399.99':false, '400-499.99': false, '500+': false});
   const [starFilter, setStarFilter] = useState({five: false, four: false, three: false, two: false, one: false});
   const [sort, setSort] = useState('price-low');
+  const [searchItem, setSearchItem] = useState('');
 
 
   
@@ -27,6 +28,8 @@ export const ShopPage = () => {
     <div>
       <Header 
         search={true}
+        searchItem={searchItem}
+        setSearchItem={setSearchItem}
         change={change}
         setChange={setChange}
         />
@@ -144,6 +147,10 @@ export const ShopPage = () => {
                   return 1;
                 }
                 return 0;
+              }
+            }).filter(item => {
+              if ((item.title.toUpperCase()).includes(searchItem.toUpperCase())) {
+                return item;
               }
             })
           }
