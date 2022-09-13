@@ -17,8 +17,11 @@ export const ShopPage = () => {
 ]);
 
   const [category, setCategory] = useState('all');
-  const [priceFilter, setPriceFilter] = useState('');
+  const [priceFilter, setPriceFilter] = useState({'0-99.99': false, '100-199.99': false, '200-299.99':false, '300-399.99':false, '400-499.99': false, '500+': false});
+  const [starFilter, setStarFilter] = useState({five: false, four: false, three: false, two: false, one: false});
 
+
+  
   return (
     <div>
       <Header 
@@ -33,6 +36,10 @@ export const ShopPage = () => {
           setCategory={setCategory}
           priceFilter={priceFilter}
           setPriceFilter={setPriceFilter}
+          starFilter={starFilter}
+          setStarFilter={setStarFilter}
+          change={change}
+          setChange={setChange}
         />
         <ProductDisplay 
           products={
@@ -41,6 +48,73 @@ export const ShopPage = () => {
                 return item;
               } else if (item.category === category) {
                 return item;
+              }
+            }).filter(item => {
+              if (!priceFilter['0-99.99'] && !priceFilter['100-199.99'] &&
+                  !priceFilter['200-299.99'] && !priceFilter['300-399.99'] &&
+                  !priceFilter['400-499.99'] && !priceFilter['500+']) {
+                    return item;
+                  } 
+              if(priceFilter['0-99.99']) {
+                if (item.price >= 0 && item.price <= 99.99) {
+                  return item;
+                }
+              }
+              if(priceFilter['100-199.99']) {
+                if (item.price >= 100 && item.price <= 199.99){
+                  return item;
+                }
+              }
+              if(priceFilter['200-299.99']) {
+                if (item.price >= 200 && item.price <= 299.99){
+                  return item;
+                }
+              }
+              if(priceFilter['300-399.99']) {
+                if (item.price >= 300 && item.price <= 399.99){
+                  return item;
+                }
+              }
+              if(priceFilter['400-499.99']) {
+                if (item.price >= 400 && item.price <= 499.99){
+                  return item;
+                }
+              }
+              if(priceFilter['500+']) {
+                if (item.price >= 500){
+                  return item;
+                }
+              }
+            }).filter(item => {
+              if (!starFilter.five && !starFilter.four &&
+                  !starFilter.three && !starFilter.two &&
+                  !starFilter.one) {
+                    return item;
+                  }
+              if (starFilter.five) {
+                if(item.rating.rate >= 4.5) {
+                  return item;
+                }
+              }
+              if (starFilter.four) {
+                if(item.rating.rate < 4.5 && item.rating.rate >= 3.5) {
+                  return item;
+                }
+              }
+              if (starFilter.three) {
+                if(item.rating.rate < 3.5 && item.rating.rate >= 2.5) {
+                  return item;
+                }
+              }
+              if (starFilter.two) {
+                if(item.rating.rate < 2.5 && item.rating.rate >= 1.5) {
+                  return item;
+                }
+              }
+              if (starFilter.one) {
+                if(item.rating.rate < 1.5) {
+                  return item;
+                }
               }
             })
           }

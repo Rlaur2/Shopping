@@ -5,7 +5,7 @@ import { FilterRating } from './FilterRating'
 import './stylesheets/FilterSideBar.css'
 
 
-export const FilterSideBar = ({category, setCategory}) => {
+export const FilterSideBar = ({category, setCategory, priceFilter, setPriceFilter, starFilter, setStarFilter, change, setChange}) => {
   return (
     <div className='sidebar'>
         <FilterCategory 
@@ -13,10 +13,16 @@ export const FilterSideBar = ({category, setCategory}) => {
         setCategory={setCategory}
         />
         <FilterPrice 
-        
+          priceFilter={priceFilter}
+          setPriceFilter={setPriceFilter}
+          change={change}
+          setChange={setChange}
         />
         <FilterRating 
-         
+          starFilter={starFilter}
+          setStarFilter={setStarFilter}
+          change={change}
+          setChange={setChange}
         />
         <div className='filter-reset'>
           Reset Filters
