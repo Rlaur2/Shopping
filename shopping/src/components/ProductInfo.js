@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom'
 import { Header } from './Header'
 
 
-export const ProductInfo = ({match}) => {
+export const ProductInfo = () => {
   const [product, setProduct] = useState({category: 'jewelery',description: 'Satisfaction Guaranteed. Return or exchange any order within 30 days.Designed and sold by Hafeez Center in the United States. Satisfaction Guaranteed. Return or exchange any order within 30 days.',id:6,image:'https://fakestoreapi.com/img/61sbMiUnoGL._AC_UL640_QL65_ML3_.jpg',price:168,rating:{rate:3.9, count:70},title:'Solid Gold Petite Micropave '})
   const [cartAmount, setCartAmount] = useState(1);
   const [change, setChange] = useState(false);
@@ -16,9 +16,6 @@ export const ProductInfo = ({match}) => {
   const params = useParams();
 
   useEffect(() => {
-    /*const locations = !localStorage.newLocation ? [] : JSON.parse(localStorage.getItem('newLocation'))
-    localStorage.setItem('newLocation', JSON.stringify([...locations,`I've been to the ${product.title} page!`]))
-    the above code works, you can save an array in local storage and pull it from anywhere on the site */
     const currentCart = JSON.parse(localStorage.getItem('cart'));
     if (!currentCart) {
         localStorage.setItem('cart', JSON.stringify([]));

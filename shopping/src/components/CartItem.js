@@ -4,6 +4,7 @@ import './stylesheets/Cart.css'
 import {ReactComponent as Minus} from '/home/pavel/Projects/Shopping/shopping/src/images/minus-circle.svg'
 import {ReactComponent as Plus} from '/home/pavel/Projects/Shopping/shopping/src/images/plus-circle.svg'
 import {ReactComponent as Trash} from '/home/pavel/Projects/Shopping/shopping/src/images/trash-can.svg'
+import { Link } from 'react-router-dom'
 
 export const CartItem = ({cartItem, change, setChange}) => {
     const [quantity, setQuantity] = useState(cartItem.quantity);
@@ -66,23 +67,25 @@ export const CartItem = ({cartItem, change, setChange}) => {
   
     return (
     <div className="cart-item">
-    <div className="cart-image">
-        <img src={cartItem.image} alt={cartItem.title} />
-    </div>
-    <div className="cart-information">
-        <div className="cart-title">
-            {cartItem.title}
+        <Link to={`/shop/${cartItem.id}`}>
+            <div className="cart-image">
+                <img src={cartItem.image} alt={cartItem.title} />
+            </div>
+        </Link>
+        <div className="cart-information">
+            <div className="cart-title">
+                {cartItem.title}
+            </div>
+            <div className="cart-quantity">
+                <div className='quantity-text'>Quantity:</div> <Minus onClick={handleQuantityDecrease} />{quantity}<Plus onClick={handleQuantityIncrease} />
+            </div>
         </div>
-        <div className="cart-quantity">
-            <div className='quantity-text'>Quantity:</div> <Minus onClick={handleQuantityDecrease} />{quantity}<Plus onClick={handleQuantityIncrease} />
+        <div className="cart-price">
+            ${cartItem.price}
+        </div>
+        <div className="cart-delete">
+            <Trash onClick={handleDelete} />
         </div>
     </div>
-    <div className="cart-price">
-        ${cartItem.price}
-    </div>
-    <div className="cart-delete">
-        <Trash onClick={handleDelete} />
-    </div>
-</div>
   )
 }
