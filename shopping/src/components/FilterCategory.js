@@ -1,8 +1,7 @@
-import React, { useState } from 'react'
+import React from 'react'
 import './stylesheets/FilterCategory.css'
 
 export const FilterCategory = ({category, setCategory}) => {
-    
     
     const handleCategoryFilter = (e) => {
         setCategory(e.target.value);

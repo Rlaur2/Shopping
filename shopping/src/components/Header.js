@@ -3,7 +3,7 @@ import './stylesheets/Header.css'
 import {ReactComponent as HomeIcon} from '/home/pavel/Projects/Shopping/shopping/src/images/home-heart.svg'
 import {ReactComponent as ShopIcon} from '/home/pavel/Projects/Shopping/shopping/src/images/shopping-outline.svg'
 import {ReactComponent as CartIcon} from '/home/pavel/Projects/Shopping/shopping/src/images/cart-outline.svg'
-import { Link, useParams } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { SearchBar } from './SearchBar'
 import { Cart } from './Cart'
 
