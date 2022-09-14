@@ -18,11 +18,8 @@ export const ProductDisplay = ({products}) => {
             <li key={item.id}>
               <Link to={`/shop/${item.id}`}>
                 <Product 
-                  category={item.category}
-                  description={item.description}
                   image={item.image}
                   price={item.price}
-                  rating={item.rating}
                   title={item.title}
                 />
               </Link>   

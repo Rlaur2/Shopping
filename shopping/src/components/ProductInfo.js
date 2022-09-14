@@ -36,7 +36,6 @@ export const ProductInfo = () => {
             return item;
         }
         });
-        console.log(currentCart, checkCart);
     if (checkCart.length) {
         const newStorage = currentCart.map(item => {
             if (item.id === product.id) {
@@ -97,7 +96,7 @@ export const ProductInfo = () => {
                         <div className='review-count'>{product.rating.count} reviews</div>
                     </div>
                     <div className="product-price">
-                        ${product.price}
+                        ${Number(product.price).toFixed(2)}
                     </div>
                     <div className="add-to-cart">
                         <div className='cart-increaser'><Minus onClick={handleCartDecrease} /><div className='cart-amount'>{cartAmount}</div><Plus onClick={handleCartIncrease} /></div>
