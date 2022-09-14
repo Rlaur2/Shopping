@@ -71,5 +71,3 @@ export const FilterCategory = ({category, setCategory}) => {
   )
 }
 
-
-//The category titles should get a unique font

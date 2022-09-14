@@ -85,6 +85,7 @@
     flex-flow: column;
     justify-content: center;
     gap: .5rem;
+    user-select: none;
 }
 
 .add-to-cart-button {

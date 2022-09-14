@@ -34,20 +34,12 @@
     transform: scale(1.1);
 }
 
-.transparent-background, .cart {
-    /*display: none;*/
-}
-
 .no-display {
     display: none;
 }
 
 .overflow-hidden {
     overflow: hidden;
-}
-
-body {
-    /*overflow: hidden;*/
 }
 
 .cart-name {
@@ -114,6 +106,7 @@ body {
     margin-right: auto;
     align-items: center;
     gap: 1rem;
+    user-select: none;
 }
 
 .quantity-text {
