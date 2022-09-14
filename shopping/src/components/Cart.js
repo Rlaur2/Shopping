@@ -8,9 +8,10 @@ export const Cart = ({cart, change, setChange, setDisplay, totalQuantity}) => {
 
   let subTotal = 0;
   if (cart && cart.length > 1) {
-    subTotal = cart.reduce((previous, current) => {
-     return (previous.quantity * previous.price + current.quantity * current.price).toFixed(2);
+     cart.forEach(item => {
+      subTotal += item.quantity * item.price;
     });
+    subTotal = subTotal.toFixed(2);
   } else if (cart && cart.length === 1) {
     subTotal = (cart[0].quantity * cart[0].price).toFixed(2);
   }

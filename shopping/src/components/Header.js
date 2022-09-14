@@ -17,8 +17,8 @@ export const Header = ({search, change, setChange, searchItem, setSearchItem}) =
 
   let totalQuantity = 0;
   if (cart && cart.length > 1) {
-    totalQuantity = cart.reduce((previous, current) => {
-     return previous.quantity + current.quantity;
+    cart.forEach(item => {
+     totalQuantity += item.quantity;
     });
   } else if (cart && cart.length === 1) {
     totalQuantity = cart[0].quantity;
