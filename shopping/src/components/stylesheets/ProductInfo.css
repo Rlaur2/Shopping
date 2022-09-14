@@ -121,3 +121,29 @@
     border: double 4px var(--store-color);
     padding: 1rem;
 }
+
+.loading-product {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 6rem;
+    font-size: 5rem;
+}
+
+.loader {
+    border: 20px solid #EAF0F6;
+    border-radius: 50%;
+    border-top: 20px solid #FF7A59;
+    width: 100px;
+    height: 100px;
+    animation: spinner 4s linear infinite;
+}
+
+@keyframes spinner {
+    0% { 
+        transform: rotate(0deg); 
+    }
+    100% { 
+        transform: rotate(360deg); 
+    }  
+  }

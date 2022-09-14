@@ -10,7 +10,7 @@ export const ProductDisplay = ({products}) => {
     return (
     <div className='all-products'>
         <ul className='products'>
-        {products.length ? products.map(item => (
+        {!products.length ? <div className='no-products-message'>No products to display</div> : products[0].title === 'loading' ? <div className='loading-products'>Loading...<div className='loader'></div></div> : products.map(item => (
             <li key={item.id}>
               <Link to={`/shop/${item.id}`}>
                 <Product 
@@ -23,7 +23,7 @@ export const ProductDisplay = ({products}) => {
                 />
               </Link>   
             </li>
-        )) : <div className='no-products-message'>No products to display</div>}
+        ))}
         </ul>
     </div>
   )

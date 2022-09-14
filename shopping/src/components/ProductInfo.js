@@ -9,7 +9,7 @@ import { Header } from './Header'
 
 
 export const ProductInfo = () => {
-  const [product, setProduct] = useState({category: 'jewelery',description: 'Satisfaction Guaranteed. Return or exchange any order within 30 days.Designed and sold by Hafeez Center in the United States. Satisfaction Guaranteed. Return or exchange any order within 30 days.',id:6,image:'https://fakestoreapi.com/img/61sbMiUnoGL._AC_UL640_QL65_ML3_.jpg',price:168,rating:{rate:3.9, count:70},title:'Solid Gold Petite Micropave '})
+  const [product, setProduct] = useState({category: '',description: '',id:'',image:'',price:'',rating:{rate:'', count:''},title:''})
   const [cartAmount, setCartAmount] = useState(1);
   const [change, setChange] = useState(false);
   //params.id gives me the url to will be used to fetch this specific item
@@ -20,7 +20,14 @@ export const ProductInfo = () => {
     if (!currentCart) {
         localStorage.setItem('cart', JSON.stringify([]));
     }
+    fetchProduct();
   },[])
+
+  const fetchProduct = async () => {
+    const product = await fetch(`https://fakestoreapi.com/products/${params.id}`);
+    const response = await product.json();
+    setProduct(response);
+  }
 
   const handleCartAddition = () => {
     const currentCart = JSON.parse(localStorage.getItem('cart'));
@@ -77,7 +84,7 @@ export const ProductInfo = () => {
                 Back To Products
             </div>
         </Link>
-        <div className='product-container'>
+        {!product.title ? <div className='loading-product'>Loading...<div className="loader"></div></div> :<div className='product-container'>
             <div className="product-info">
                 <img src={product.image} alt={product.title} />
                 <div className="product-details">
@@ -105,7 +112,7 @@ export const ProductInfo = () => {
             <div className="product-info-description">
                     {product.description}
             </div>
-        </div>
+        </div>}
     </div>
   )
 }
