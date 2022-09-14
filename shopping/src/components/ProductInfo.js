@@ -45,11 +45,9 @@ export const ProductInfo = () => {
             } else return item;
         });
         localStorage.setItem('cart', JSON.stringify(newStorage));
-        console.log(newStorage, 'already in cart');
     } else {
         currentCart.push({...product, quantity: cartAmount});
         localStorage.setItem('cart', JSON.stringify(currentCart));
-        console.log(currentCart, 'first time going to cart');
     }
     setChange(!change);
   }
