@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { useEffect } from 'react'
 import { FilterSideBar } from './components/FilterSideBar'
 import { Header } from './components/Header'
 import { ProductDisplay } from './components/ProductDisplay'
@@ -15,6 +16,16 @@ export const ShopPage = () => {
     {category: 'men\'s clothing', description: 'great outerwear jackets for Spring/Autumn/Winter, suitable for many occasions, such as working, hiking, camping, mountain/rock climbing, cycling, traveling or other outdoors. Good gift choice for you or your family member. A warm hearted love to Father, husband or son in this thanksgiving or Christmas Day.',id: 3, image: 'https://fakestoreapi.com/img/71li-ujtlUL._AC_UX679_.jpg', price: 55.99, rating: {rate:4.7,count:500},title:'Mens Cotton Jacket'},
     {category: 'women\'s clothing', description:'Note:The Jackets is US standard size, Please choose size as your usual wear Material: 100% Polyester; Detachable Liner Fabric: Warm Fleece. Detachable Functional Liner: Skin Friendly, Lightweigt and Warm.Stand Collar Liner jacket, keep you warm in cold weather. Zippered Pockets: 2 Zippered Hand Pockets, 2 Zippered Pockets on Chest (enough to keep cards or keys)and 1 Hidden Pocket Inside.Zippered Hand Pockets and Hidden Pocket keep your things secure. Humanized Design: Adjustable and Detachable Hood and Adjustable cuff to prevent the wind and water,for a comfortable fit. 3 in 1 Detachable Design provide more convenience, you can separate the coat and inner as needed, or wear it together. It is suitable for different season and help you adapt to different climates',id:15,image:'https://fakestoreapi.com/img/51Y5NI-I5jL._AC_UX679_.jpg',price:56.99,rating:{rate:2.6,count:235},title:'BIYLACLESEN Women\'s 3-in-1 Snowboard Jacket Winter Coats'}
 ]);
+
+const fetchProducts = async () => {
+  const products = await fetch('https://fakestoreapi.com/products');
+  const response = await products.json();
+  setProducts(response);
+}
+
+useEffect(() => {
+  fetchProducts();
+},[])
 
   const [category, setCategory] = useState('all');
   const [priceFilter, setPriceFilter] = useState({'0-99.99': false, '100-199.99': false, '200-299.99':false, '300-399.99':false, '400-499.99': false, '500+': false});
@@ -159,5 +170,3 @@ export const ShopPage = () => {
     </div>
   )
 }
-
-//The API call to gather the products should happen here I'm sure

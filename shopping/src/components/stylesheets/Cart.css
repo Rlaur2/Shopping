@@ -34,6 +34,10 @@
     transform: scale(1.1);
 }
 
+.transparent-background, .cart {
+    /*display: none;*/
+}
+
 .no-display {
     display: none;
 }
@@ -41,6 +45,8 @@
 .overflow-hidden {
     overflow: hidden;
 }
+
+
 
 .cart-name {
     font-size: 2rem;
