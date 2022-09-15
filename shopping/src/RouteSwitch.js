@@ -5,7 +5,7 @@ import { ProductInfo } from "./components/ProductInfo";
 
 export const RouteSwitch = () => {
   return (
-    <BrowserRouter basename={process.env.PUBLIC_URL}>
+    <BrowserRouter basename={window.location.pathname || ''}>
             <Routes>
                 <Route path="/" element={<App />}/>
                 <Route path="/shop" element={<ShopPage />}/>
