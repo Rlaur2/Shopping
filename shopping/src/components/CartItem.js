@@ -1,13 +1,13 @@
-import React, { useState } from 'react'
-import { useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import './stylesheets/Cart.css'
 import {ReactComponent as Minus} from '/home/pavel/Projects/Shopping/shopping/src/images/minus-circle.svg'
 import {ReactComponent as Plus} from '/home/pavel/Projects/Shopping/shopping/src/images/plus-circle.svg'
 import {ReactComponent as Trash} from '/home/pavel/Projects/Shopping/shopping/src/images/trash-can.svg'
-import { Link } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 
-export const CartItem = ({cartItem, change, setChange, handleCartDisplay}) => {
+export const CartItem = ({cartItem, change, setChange, handleCartDisplay, updateShopPage, setUpdateShopPage}) => {
     const [quantity, setQuantity] = useState(cartItem.quantity);
+    const params = useParams();
 
  useEffect(() => {
     const currentCart = JSON.parse(localStorage.getItem('cart'));
@@ -17,6 +17,13 @@ export const CartItem = ({cartItem, change, setChange, handleCartDisplay}) => {
         }
     }) 
  },[change])
+    
+ 
+    const handleShopUpdate = () => {
+        if (Number(params.id) !== cartItem.id) {
+            setUpdateShopPage(!updateShopPage);
+        }
+    }
 
     const handleQuantityIncrease = () => {
         if (quantity === 99) {
@@ -67,7 +74,7 @@ export const CartItem = ({cartItem, change, setChange, handleCartDisplay}) => {
   
     return (
     <div className="cart-item">
-        <Link onClick={handleCartDisplay} to={`/shop/${cartItem.id}`}>
+        <Link onClick={[handleCartDisplay, handleShopUpdate]}  to={`/shop/${cartItem.id}`}>
             <div  className="cart-image">
                 <img src={cartItem.image} alt={cartItem.title} />
             </div>

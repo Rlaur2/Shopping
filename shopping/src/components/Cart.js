@@ -3,7 +3,6 @@ import './stylesheets/Cart.css'
 import { CartItem } from './CartItem'
 import {ReactComponent as WindowClose} from '/home/pavel/Projects/Shopping/shopping/src/images/window-close.svg'
 
-
 export const Cart = ({cart, change, setChange, setDisplay, totalQuantity, updateShopPage, setUpdateShopPage}) => {
 
   let subTotal = 0;
@@ -20,7 +19,6 @@ export const Cart = ({cart, change, setChange, setDisplay, totalQuantity, update
     setDisplay('no-display');
     const body = document.querySelector('body');
     body.classList.toggle('overflow-hidden');
-    setUpdateShopPage(!updateShopPage);
   }
 
   return (
@@ -36,7 +34,9 @@ export const Cart = ({cart, change, setChange, setDisplay, totalQuantity, update
                           cartItem={item}
                           setChange={setChange}
                           change={change}
-                          handleCartDisplay={handleCartDisplay} 
+                          handleCartDisplay={handleCartDisplay}
+                          updateShopPage={updateShopPage}
+                          setUpdateShopPage={setUpdateShopPage} 
                           />
                     ))}</div> : <div className='empty-cart-message'>Your cart is empty...</div>}
                     </div>

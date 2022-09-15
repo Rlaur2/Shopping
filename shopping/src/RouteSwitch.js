@@ -5,7 +5,7 @@ import { ProductInfo } from "./components/ProductInfo";
 
 export const RouteSwitch = () => {
   return (
-    <BrowserRouter basename="/onlineretailer">
+    <BrowserRouter basename="/shopping">
             <Routes>
                 <Route path="/" element={<App />}/>
                 <Route path="/shop" element={<ShopPage />}/>
