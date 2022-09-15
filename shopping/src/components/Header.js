@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom'
 import { SearchBar } from './SearchBar'
 import { Cart } from './Cart'
 
-export const Header = ({search, change, setChange, searchItem, setSearchItem}) => {
+export const Header = ({search, change, setChange, searchItem, setSearchItem, updateShopPage, setUpdateShopPage}) => {
   const [cart, setCart] = useState(!localStorage.cart ? [] : JSON.parse(localStorage.getItem('cart')));
   const [display, setDisplay] = useState('no-display');
 
@@ -52,6 +52,8 @@ export const Header = ({search, change, setChange, searchItem, setSearchItem}) =
                 setChange={setChange}
                 setDisplay={setDisplay}
                 totalQuantity={totalQuantity}
+                updateShopPage={updateShopPage}
+                setUpdateShopPage={setUpdateShopPage}
                 />
             </div>
     </header>

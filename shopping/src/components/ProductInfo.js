@@ -13,6 +13,7 @@ export const ProductInfo = () => {
   const [product, setProduct] = useState({category: '',description: '',id:'',image:'',price:'',rating:{rate:'', count:''},title:''})
   const [cartAmount, setCartAmount] = useState(1);
   const [change, setChange] = useState(false);
+  const [updateShopPage, setUpdateShopPage] = useState(false);
   //params.id gives me the url to will be used to fetch this specific item
   const params = useParams();
 
@@ -21,9 +22,13 @@ export const ProductInfo = () => {
     if (!currentCart) {
         localStorage.setItem('cart', JSON.stringify([]));
     }
-    setTimeout(fetchRawProduct, 300);
+    //sets product back to default when re-rendering from clicking an item from the cart
+    setProduct({category: '',description: '',id:'',image:'',price:'',rating:{rate:'', count:''},title:''})
+    //the random timer and setTimeout simulates an API call
+    const randomtTimer = Math.floor(Math.random() * 100)
+    setTimeout(fetchRawProduct, randomtTimer + 250);
     //fetchProduct();
-  },[])
+  },[updateShopPage])
 
   const fetchRawProduct = () => {
     const returnedProduct = productsAPI.filter(item => {
@@ -87,7 +92,9 @@ export const ProductInfo = () => {
     <div>
         <Header 
             change={change}
-            setChange={setChange} 
+            setChange={setChange}
+            updateShopPage={updateShopPage}
+            setUpdateShopPage={setUpdateShopPage} 
             />
         <Link to={'/shop'}> 
             <div className="go-back">

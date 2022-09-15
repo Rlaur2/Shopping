@@ -24,7 +24,9 @@ const fetchRawProducts = () => {
 }
 
 useEffect(() => {
-  setTimeout(fetchRawProducts, 1000);
+  //the random timer and setTimeout simulates an API call
+  const randomTimer = Math.floor(Math.random() * 600)
+  setTimeout(fetchRawProducts, randomTimer + 500);
   //fetchProducts();
 },[])
 

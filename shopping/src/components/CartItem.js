@@ -6,7 +6,7 @@ import {ReactComponent as Plus} from '/home/pavel/Projects/Shopping/shopping/src
 import {ReactComponent as Trash} from '/home/pavel/Projects/Shopping/shopping/src/images/trash-can.svg'
 import { Link } from 'react-router-dom'
 
-export const CartItem = ({cartItem, change, setChange}) => {
+export const CartItem = ({cartItem, change, setChange, handleCartDisplay}) => {
     const [quantity, setQuantity] = useState(cartItem.quantity);
 
  useEffect(() => {
@@ -67,8 +67,8 @@ export const CartItem = ({cartItem, change, setChange}) => {
   
     return (
     <div className="cart-item">
-        <Link to={`/shop/${cartItem.id}`}>
-            <div className="cart-image">
+        <Link onClick={handleCartDisplay} to={`/shop/${cartItem.id}`}>
+            <div  className="cart-image">
                 <img src={cartItem.image} alt={cartItem.title} />
             </div>
         </Link>
