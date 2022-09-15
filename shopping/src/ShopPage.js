@@ -5,19 +5,27 @@ import { Header } from './components/Header'
 import { ProductDisplay } from './components/ProductDisplay'
 import { Sort } from './components/Sort'
 import './components/stylesheets/ShopPage.css'
+import { products as productsAPI } from './components/productsFromApi'
 
 export const ShopPage = () => {
   const [change, setChange] = useState(false);
   const [products, setProducts] = useState([{category: '',description: '',id:'',image:'',price:'',rating:{rate:'', count:''},title:'loading'}]);
 
-const fetchProducts = async () => {
+/*
+  This API constantly goes down. productsAPI is the raw info.
+  const fetchProducts = async () => {
   const products = await fetch('https://fakestoreapi.com/products');
   const response = await products.json();
   setProducts(response);
+}*/
+
+const fetchRawProducts = () => {
+  setProducts(productsAPI); 
 }
 
 useEffect(() => {
-  fetchProducts();
+  setTimeout(fetchRawProducts, 1000);
+  //fetchProducts();
 },[])
 
   const [category, setCategory] = useState('all');

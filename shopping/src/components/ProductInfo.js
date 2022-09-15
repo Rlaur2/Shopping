@@ -6,6 +6,7 @@ import {ReactComponent as Minus} from '/home/pavel/Projects/Shopping/shopping/sr
 import {ReactComponent as Plus} from '/home/pavel/Projects/Shopping/shopping/src/images/plus-circle.svg'
 import { Link } from 'react-router-dom'
 import { Header } from './Header'
+import { products as productsAPI } from './productsFromApi'
 
 
 export const ProductInfo = () => {
@@ -20,14 +21,26 @@ export const ProductInfo = () => {
     if (!currentCart) {
         localStorage.setItem('cart', JSON.stringify([]));
     }
-    fetchProduct();
+    setTimeout(fetchRawProduct, 300);
+    //fetchProduct();
   },[])
 
-  const fetchProduct = async () => {
+  const fetchRawProduct = () => {
+    const returnedProduct = productsAPI.filter(item => {
+        if (Number(params.id) === item.id) {
+            return item;
+        } 
+    });
+    setProduct(returnedProduct[0]);
+  }
+
+  /*
+    The API constantly goes down. productsAPI is the raw information.
+    const fetchProduct = async () => {
     const product = await fetch(`https://fakestoreapi.com/products/${params.id}`);
     const response = await product.json();
     setProduct(response);
-  }
+  }*/
 
   const handleCartAddition = () => {
     const currentCart = JSON.parse(localStorage.getItem('cart'));
