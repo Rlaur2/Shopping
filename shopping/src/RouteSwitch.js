@@ -5,7 +5,7 @@ import { ProductInfo } from "./components/ProductInfo";
 
 export const RouteSwitch = () => {
   return (
-    <BrowserRouter basename="shop" >
+    <BrowserRouter basename="react-shopping" >
             <Routes>
                 <Route path="/" element={<App />}/>
                 <Route path="/shop" element={<ShopPage />}/>
