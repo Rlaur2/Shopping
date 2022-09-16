@@ -28,6 +28,7 @@ export const Cart = ({cart, change, setChange, setDisplay, totalQuantity, update
                 <div className='close-button' onClick={handleCartDisplay}><WindowClose /></div>
                 <div className='cart-name'>Shopping Cart</div>
                     <div>
+                      {console.log(cart)}
                       {cart && cart.length ? <div>{cart.map((item, index) => (
                         <CartItem 
                           key={index} 

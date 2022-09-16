@@ -8,8 +8,8 @@ import { SearchBar } from './SearchBar'
 import { Cart } from './Cart'
 
 export const Header = ({search, change, setChange, searchItem, setSearchItem, updateShopPage, setUpdateShopPage}) => {
-  const [cart, setCart] = useState(!localStorage.cart ? [] : JSON.parse(localStorage.getItem('cart')));
-  const [display, setDisplay] = useState('no-display');
+ const [cart, setCart] = useState(!localStorage.cart ? [] : JSON.parse(localStorage.getItem('cart')));
+ const [display, setDisplay] = useState('no-display');
 
   useEffect(() => {
    setCart(JSON.parse(localStorage.getItem('cart')));
@@ -46,7 +46,7 @@ export const Header = ({search, change, setChange, searchItem, setSearchItem, up
             </li>
         </ul>
             <div className={display}>
-              <Cart
+              {/*<Cart
                 cart={cart}
                 change={change}
                 setChange={setChange}
@@ -54,7 +54,7 @@ export const Header = ({search, change, setChange, searchItem, setSearchItem, up
                 totalQuantity={totalQuantity}
                 updateShopPage={updateShopPage}
                 setUpdateShopPage={setUpdateShopPage}
-                />
+  />*/}
             </div>
     </header>
   )
