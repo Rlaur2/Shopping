@@ -12,7 +12,11 @@ export const Header = ({search, change, setChange, searchItem, setSearchItem, up
  const [display, setDisplay] = useState('no-display');
 
   useEffect(() => {
-   setCart(JSON.parse(localStorage.getItem('cart')));
+    if (!localStorage.cart) {
+      setCart([]);
+    } else {
+      setCart(JSON.parse(localStorage.getItem('cart')));
+    }
   },[change])
 
   let totalQuantity = 0;
@@ -46,7 +50,7 @@ export const Header = ({search, change, setChange, searchItem, setSearchItem, up
             </li>
         </ul>
             <div className={display}>
-              {/*<Cart
+              {<Cart
                 cart={cart}
                 change={change}
                 setChange={setChange}
@@ -54,7 +58,7 @@ export const Header = ({search, change, setChange, searchItem, setSearchItem, up
                 totalQuantity={totalQuantity}
                 updateShopPage={updateShopPage}
                 setUpdateShopPage={setUpdateShopPage}
-  />*/}
+              />}
             </div>
     </header>
   )
