@@ -7,7 +7,7 @@
 }
 
 .background {
-    background-image: url('./images/blurred-blackground.webp');
+    background-image: url('./components/images/blurred-blackground.webp');
     height: calc(100vh - 83px);
     width: calc(100vw - 15px);
     background-size:cover;

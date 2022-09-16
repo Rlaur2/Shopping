@@ -1,7 +1,7 @@
 import React from 'react'
-import {ReactComponent as EmptyStar} from '/home/pavel/Projects/Shopping/shopping/src/images/star-outline.svg'
-import {ReactComponent as FullStar} from '/home/pavel/Projects/Shopping/shopping/src/images/star.svg'
-import {ReactComponent as HalfStar} from '/home/pavel/Projects/Shopping/shopping/src/images/star-half-full.svg'
+import {ReactComponent as EmptyStar} from './images/star-outline.svg'
+import {ReactComponent as FullStar} from './images/star.svg'
+import {ReactComponent as HalfStar} from './images/star-half-full.svg'
 import './stylesheets/FilterRating.css'
 
 

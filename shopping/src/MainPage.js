@@ -1,5 +1,5 @@
 import React from 'react'
-import chevron from './images/chevron-right.svg'
+import chevron from './components/images/chevron-right.svg'
 import { Link } from 'react-router-dom'
 
 export const MainPage = () => {

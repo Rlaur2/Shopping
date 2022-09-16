@@ -1,7 +1,7 @@
 import React from 'react'
 import './stylesheets/Cart.css'
 import { CartItem } from './CartItem'
-import {ReactComponent as WindowClose} from '/home/pavel/Projects/Shopping/shopping/src/images/window-close.svg'
+import {ReactComponent as WindowClose} from './images/window-close.svg'
 
 export const Cart = ({cart, change, setChange, setDisplay, totalQuantity, updateShopPage, setUpdateShopPage}) => {
 

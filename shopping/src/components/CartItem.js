@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import './stylesheets/Cart.css'
-import {ReactComponent as Minus} from '/home/pavel/Projects/Shopping/shopping/src/images/minus-circle.svg'
-import {ReactComponent as Plus} from '/home/pavel/Projects/Shopping/shopping/src/images/plus-circle.svg'
-import {ReactComponent as Trash} from '/home/pavel/Projects/Shopping/shopping/src/images/trash-can.svg'
+import {ReactComponent as Minus} from './images/minus-circle.svg'
+import {ReactComponent as Plus} from './images/plus-circle.svg'
+import {ReactComponent as Trash} from './images/trash-can.svg'
 import { Link, useParams } from 'react-router-dom'
 
 export const CartItem = ({cartItem, change, setChange, handleCartDisplay, updateShopPage, setUpdateShopPage}) => {
