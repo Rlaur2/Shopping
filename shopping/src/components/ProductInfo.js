@@ -26,7 +26,7 @@ export const ProductInfo = () => {
     setProduct({category: '',description: '',id:'',image:'',price:'',rating:{rate:'', count:''},title:''})
     //the random timer and setTimeout simulates an API call
     const randomtTimer = Math.floor(Math.random() * 100)
-    setTimeout(fetchRawProduct, randomtTimer + 250);
+    setTimeout(fetchRawProduct, randomtTimer + 185);
     //fetchProduct();
   },[updateShopPage])
 
