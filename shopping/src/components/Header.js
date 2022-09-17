@@ -30,8 +30,8 @@ export const Header = ({search, change, setChange, searchItem, setSearchItem, up
 
   const handleCartDisplay = () => {
     setDisplay('');
-    const body = document.querySelector('body');
-    body.classList.toggle('overflow-hidden');
+    const html = document.querySelector('html');
+    html.classList.toggle('overflow-hidden');
   }
   
   return (

@@ -5,6 +5,12 @@
   font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
+/*this html styling prevents page from shifting when scrollbar appears*/
+html {
+  overflow-x: hidden;
+  margin-right: calc(-1 * (100vw - 100%));
+}
+
 :root {
   --store-color: rgb(27, 104, 57);
   --star-fill: rgb(202, 155, 36);

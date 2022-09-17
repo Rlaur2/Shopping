@@ -17,8 +17,8 @@ export const Cart = ({cart, change, setChange, setDisplay, totalQuantity, update
 
   const handleCartDisplay = () => {
     setDisplay('no-display');
-    const body = document.querySelector('body');
-    body.classList.toggle('overflow-hidden');
+    const html = document.querySelector('html');
+    html.classList.toggle('overflow-hidden');
   }
 
   return (

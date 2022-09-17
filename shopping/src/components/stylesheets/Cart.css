@@ -18,8 +18,9 @@
     position: absolute;
     background-color: var(--store-color);
     z-index: 15;
-    overflow-y: scroll;
+    overflow-y: auto;
 }
+
 
 .close-button {
     height: 55px;
