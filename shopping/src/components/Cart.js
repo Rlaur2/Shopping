@@ -19,11 +19,15 @@ export const Cart = ({cart, change, setChange, setDisplay, totalQuantity, update
     setDisplay('no-display');
     const html = document.querySelector('html');
     html.classList.toggle('overflow-hidden');
+    const cartDisplay = document.querySelector('.cart');
+    cartDisplay.classList.toggle('cart-transition');
+    const background = document.querySelector('.transparent-background');
+    background.classList.toggle('display-none');
   }
 
   return (
         <>
-        <div onClick={handleCartDisplay} className='transparent-background'></div>
+        <div onClick={handleCartDisplay} className='transparent-background display-none'></div>
             <div className="cart">
                 <div className='close-button' onClick={handleCartDisplay}><WindowClose /></div>
                 <div className='cart-name'>Shopping Cart</div>

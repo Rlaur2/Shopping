@@ -32,6 +32,10 @@ export const Header = ({search, change, setChange, searchItem, setSearchItem, up
     setDisplay('');
     const html = document.querySelector('html');
     html.classList.toggle('overflow-hidden');
+    const cartDisplay = document.querySelector('.cart');
+    cartDisplay.classList.toggle('cart-transition');
+    const background = document.querySelector('.transparent-background');
+    background.classList.toggle('display-none');
   }
   
   return (

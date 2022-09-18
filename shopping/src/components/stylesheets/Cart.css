@@ -12,15 +12,19 @@
 .cart {
     height: 100vh;
     width: 50vw;
-    right: 0;
+    right: -100%;
     bottom: 0;
     top: 0;
     position: absolute;
     background-color: var(--store-color);
     z-index: 15;
-    overflow-y: auto;
+    transition: transform 175ms ease-in-out 50ms;
+    overflow-y: auto; 
 }
 
+.cart-transition {
+    transform: translateX(-200%);
+}
 
 .close-button {
     height: 55px;
@@ -35,19 +39,17 @@
     transform: scale(1.1);
 }
 
-.transparent-background, .cart {
-    /*display: none;*/
+.no-display {
+    visibility: none;
 }
 
-.no-display {
+.display-none {
     display: none;
 }
 
 .overflow-hidden {
     overflow: hidden;
 }
-
-
 
 .cart-name {
     font-size: 2rem;
