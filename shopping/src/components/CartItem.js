@@ -78,7 +78,7 @@ export const CartItem = ({cartItem, change, setChange, handleCartDisplay, update
         <div onClick={handleCartDisplay}  className="cart-image">
             <img src={cartItem.image} alt={cartItem.title} />
         </div> : 
-        <Link onClick={[handleCartDisplay, handleShopUpdate]}  to={`/shop/${cartItem.id}`}>
+        <Link onClick={[handleCartDisplay, handleShopUpdate]} to={`/shop/${cartItem.id}`}>
             <div  className="cart-image">
                 <img src={cartItem.image} alt={cartItem.title} />
             </div>

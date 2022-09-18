@@ -23,7 +23,7 @@ export const Cart = ({cart, change, setChange, setDisplay, totalQuantity, update
 
   return (
         <>
-        <div onClick={(e) => {handleCartDisplay()}} className='transparent-background'></div>
+        <div onClick={handleCartDisplay} className='transparent-background'></div>
             <div className="cart">
                 <div className='close-button' onClick={handleCartDisplay}><WindowClose /></div>
                 <div className='cart-name'>Shopping Cart</div>
