@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/shopping/static/css/main.76d8a1e8.css",
-    "main.js": "/shopping/static/js/main.79b11519.js",
+    "main.js": "/shopping/static/js/main.87645c84.js",
     "static/media/blurred-blackground.webp": "/shopping/static/media/blurred-blackground.342f7abdb594fd20926d.webp",
     "static/media/always_forever-webfont.woff": "/shopping/static/media/always_forever-webfont.58d4a577e8b499fd6440.woff",
     "static/media/always_forever-webfont.woff2": "/shopping/static/media/always_forever-webfont.844f558aa2652874fe72.woff2",
@@ -18,10 +18,10 @@
     "static/media/minus-circle.svg": "/shopping/static/media/minus-circle.4bee266249063d8d35facce9df256266.svg",
     "static/media/chevron-right.svg": "/shopping/static/media/chevron-right.6ecc39957dfe5ed31ba2887f8c56405e.svg",
     "main.76d8a1e8.css.map": "/shopping/static/css/main.76d8a1e8.css.map",
-    "main.79b11519.js.map": "/shopping/static/js/main.79b11519.js.map"
+    "main.87645c84.js.map": "/shopping/static/js/main.87645c84.js.map"
   },
   "entrypoints": [
     "static/css/main.76d8a1e8.css",
-    "static/js/main.79b11519.js"
+    "static/js/main.87645c84.js"
   ]
 }
